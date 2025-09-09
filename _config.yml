@@ -1,0 +1,59 @@
+# Site settings
+title: jekyll-poc Blog
+email: no-reply@jekyll-poc.com
+description: >- # this means to ignore newlines until "baseurl:"
+  Learn, share and grow together.
+
+# By using `site.baseurl` in your navigation links, you ensure that all URLs are correctly 
+# prefixed for your GitHub Pages site. This also makes your project more portable if you 
+# ever decide to host it somewhere else.
+baseurl: "/jekyll-poc"
+
+# The base hostname & protocol for your site, e.g. http://example.com
+url: "https://www.google.com/search?q=https://srvivek1.github.io/jekyll-poc/"
+
+# This sets your URL structure.
+# 023-10-27-getting-started-with-jekyll.md --> https://your-blog-domain.com/getting-started-with-jekyll/
+permalink: /:title/ 
+
+
+# Exclude from processing
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+
+# Relse config
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+
+# Tell Jekyll not to use a theme
+# This is crucial for builds to work with your custom layout.
+theme: null
+
+
+# 
+collections:
+  authors:
+    output: true
+
+defaults:
+  - scope:
+      path: ""
+      type: "authors"
+    values:
+      layout: "author"
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
